@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <h1 id= "Titulo principal">Encriptador de Juan Diego</h1>
+    </header>
+    <div class="container">
+        <div class="left-panel">
+            <h1>Ingrese el texto aquí</h1>
+            <input id="inputText" type="text" placeholder="Ingrese el texto">
+            <p id="inputInstructions">No se aceptarán mayúsculas ni caracteres especiales.</p>
+            <div class="buttons">
+                <button class="encrypt" onclick="encryptText()">Encriptar</button>
+                <button class="decrypt" onclick="decryptText()">Desencriptar</button>
+                
+            </div>
+        </div>
+        <div class="right-panel">
+            <img src="Muñeco.png" alt="Placeholder Image">
+            <p id="outputText">Ningún mensaje fue encontrado</p>
+            <p>Ingrese el texto que desee encriptar o desencriptar.</p>
+            <div class="buttons">
+            <button class="copyText" onclick="copyText()">Copiar</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Creado por Juan Diego Merchán. Todos los derechos reservados.</p>
+    </footer>
+    <script src="encriptador.js"></script>
+</body>
+</html>
