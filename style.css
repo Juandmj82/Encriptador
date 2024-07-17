@@ -1,128 +1,49 @@
-body {
-    font-family: Arial, sans-serif; /* Cambia la fuente si lo deseas */
-    margin: 0; /* Elimina el margen predeterminado del cuerpo */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh; /* Ocupa el 100% de la altura visible del viewport */
-    background-color: #f0f0f0; /* Cambia el color de fondo del cuerpo */
+/* Asegúrate de que las imágenes se ajusten al contenedor */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-#Titulo\ principal {
-    color: #FFA500; /* Cambia el color del texto del título */
-    margin-top: 50px; /* Añade espacio superior opcional */
-}
-body {
-    font-family: 'IBM Plex Mono', monospace;
-    background-color: #F0F4F8;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-body{
-    background-image:url('matrix2.jpeg');
-}
-
+/* Contenedor principal */
 .container {
     display: flex;
-    width: 80%;
-    max-width: 1200px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.left-panel, .right-panel {
-    padding: 20px;
-    flex: 1;
-}
-
-.left-panel {
-    background-color: #E6EBF1;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
-.left-panel h1 {
-    margin-bottom: 20px;
-}
-
-.left-panel input {
+/* Paneles */
+.left-panel, .right-panel {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    margin: 10px 0;
 }
 
+/* Botones */
 .buttons {
     display: flex;
-}
-
-.buttons button {
-    flex: 1;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0 5px;
-}
-
-.buttons button.encrypt {
-    background-color: #0A74DA;
-    color: white;
-}
-
-.buttons button.decrypt {
-    background-color: #E0E0E0;
-    color: black;
-}
-
-
-.right-panel {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    background-color: #FFFFFF;
 }
 
-.right-panel img {
-    width: 100px;
-    height: auto;
-    margin-bottom: 20px;
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-.right-panel p {
-    color: #666;
-}
+/* Estilos específicos para pantallas más grandes */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-.buttons.Copiar {
-    background-color: #E0E0E0;
-    color: black;
-}
+    .left-panel, .right-panel {
+        width: 45%;
+    }
 
-.buttons .Copiar {
-    margin-left: 10px; /* Espacio entre botones si es necesario */
-    background-color: #E0E0E0;
-    color: black;
+    .buttons {
+        flex-direction: row;
+    }
 }
-
-footer {
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    background-color: #E6EBF1;
-    color: #666;
-    position: absolute;
-    bottom: 0;
-}
-
