@@ -8,6 +8,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+    color: white; /* Asegúrate de que el texto sea visible sobre el fondo */
 }
 
 header {
@@ -39,6 +40,7 @@ h1#Titulo\ principal {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+    color: black; /* Color del texto para el fondo semitransparente */
 }
 
 /* Ajustes de imagen */
