@@ -23,7 +23,70 @@ function decryptText() {
 }
 
 function copyText() {
-    // Código para copiar texto
+    var textoEncriptadoCompleto = document.getElementById('outputText').textContent.trim();
+    var enunciado = "Texto encriptado:";
+
+    if (textoEncriptadoCompleto.startsWith(enunciado)) {
+        var textoEncriptado = textoEncriptadoCompleto.substring(enunciado.length).trim();
+    } else {
+        var textoEncriptado = textoEncriptadoCompleto;
+    }
+
+    var textarea = document.createElement('textarea');
+    textarea.value = textoEncriptado;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+
+    alert('¡Texto encriptado copiado!');
 }
 
-// Otras funciones como customCipher, customDecipher, validateInput, activateCopyButton, activateDecryptButton, etc.
+function activateCopyButton() {
+    var copyButton = document.querySelector('.copyText');
+    copyButton.style.backgroundColor = '#007bff'; // Azul
+    copyButton.style.color = 'white'; // Texto blanco
+}
+
+function activateDecryptButton() {
+    var inputText = document.getElementById('inputText').value;
+    if (isEncrypted(inputText)) {
+        var decryptButton = document.querySelector('.decrypt');
+        decryptButton.style.backgroundColor = '#007bff'; // Azul
+        decryptButton.style.color = 'white'; // Texto blanco
+    } else {
+        var decryptButton = document.querySelector('.decrypt');
+        decryptButton.style.backgroundColor = ''; // Restablecer color
+        decryptButton.style.color = ''; // Restablecer color
+    }
+}
+
+function isEncrypted(text) {
+    var enunciado = "Texto encriptado:";
+    return text.startsWith(enunciado);
+}
+
+function customCipher(str) {
+    return str.split('').map(char => {
+        switch (char) {
+            case 'e': return 'enter';
+            case 'i': return 'imes';
+            case 'a': return 'ai';
+            case 'o': return 'ober';
+            case 'u': return 'ufat';
+            default: return char;
+        }
+    }).join('');
+}
+
+function customDecipher(str) {
+    return str.replace(/enter/g, 'e')
+              .replace(/imes/g, 'i')
+              .replace(/ai/g, 'a')
+              .replace(/ober/g, 'o')
+              .replace(/ufat/g, 'u');
+}
+
+function validateInput(str) {
+    return /^[a-z\s]+$/.test(str);
+}
